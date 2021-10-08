@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fpg_india/widgets/drawer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
+// GlobalKey<ScaffoldState> scaffoldKey=GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,9 +13,10 @@ class HomePage extends StatelessWidget {
         title: Text("FPG India"),
       ),
       body: Center(
-        child: Container(child: Text("Welcome to 30 days of flutter")),
-      ),
-      drawer: Drawer(),
+          child: Text(
+        '30 days of Flutter!',
+      )),
+      drawer: MyDrawer(),
     );
   }
 }
