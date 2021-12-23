@@ -201,9 +201,10 @@ class _LoginPageState extends State<LoginPage> {
                                           fit: BoxFit.contain,
                                           child: InkWell(
                                             onTap: () {
-                                              MyFunctions.showToast(
-                                                  "Working on it!");
-                                              // Navigator.pushNamed(context, MyRoutes.homeRoute);
+                                              // MyFunctions.showToast(
+                                              //     "Working on it!");
+                                              Navigator.pushNamed(
+                                                  context, MyRoutes.homeRoute);
                                             },
                                             child: Container(
                                               height: 22,

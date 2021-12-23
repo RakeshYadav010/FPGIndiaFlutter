@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fpg_india/utils/routes.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -39,8 +40,8 @@ class MyDrawer extends StatelessWidget {
                         tileMode: TileMode.clamp),
                   ),
                   margin: EdgeInsets.zero,
-                  accountName: Text("Rakesh"),
-                  accountEmail: Text("rakesh@gmail.com"),
+                  accountName: Text("Rakesh N Droid"),
+                  accountEmail: Text("rakeshndroiddev@gmail.com"),
                   currentAccountPicture: CircleAvatar(
                     backgroundImage: NetworkImage(imageUrl),
                   ),
@@ -57,9 +58,17 @@ class MyDrawer extends StatelessWidget {
                   Container(
                       height: 40,
                       child: VerticalDivider(width: 1, color: Colors.white)),
-                  Text(
-                    "Login",
-                    style: TextStyle(fontSize: 15, color: Colors.white),
+                  new GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRoutes.loginRoute);
+                    },
+                    child: new Text(
+                      "Login",
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ],
               ),
