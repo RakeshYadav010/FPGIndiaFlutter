@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fpg_india/pages/YoutubePlayerDemoApp.dart';
+import 'package:fpg_india/pages/absay_tstmnl_page.dart';
+import 'package:fpg_india/pages/contactus_page.dart';
+import 'package:fpg_india/pages/faqs_page.dart';
 import 'package:fpg_india/pages/home_page.dart';
 import 'package:fpg_india/pages/login_page.dart';
 import 'package:fpg_india/utils/routes.dart';
@@ -22,6 +26,10 @@ class MyApp extends StatelessWidget {
         "/": (context) => HomePage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.faqsRoute: (context) => FaqsPage(),
+        MyRoutes.contactRoute: (context) => ContactUsPage(),
+        MyRoutes.absayTstmnlRoute: (context) => AbsayTstmnlPage(),
+        // MyRoutes.youtubeRoute: (context) => YoutubePlayerDemoApp(),
       },
     );
   }

@@ -84,26 +84,38 @@ class MyDrawer extends StatelessWidget {
                 style: TextStyle(color: Colors.white),
               ),
             ),
-            ListTile(
-              leading: Icon(
-                Icons.question_answer,
-                color: Colors.white,
-              ),
-              title: Text(
-                "Faq's",
-                textScaleFactor: 1.2,
-                style: TextStyle(color: Colors.white),
+            new GestureDetector(
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.pushNamed(context, MyRoutes.faqsRoute);
+              },
+              child: ListTile(
+                leading: Icon(
+                  Icons.question_answer,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  "Faq's",
+                  textScaleFactor: 1.2,
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
-            ListTile(
-              leading: Icon(
-                Icons.contact_mail_outlined,
-                color: Colors.white,
-              ),
-              title: Text(
-                "Contact Us",
-                textScaleFactor: 1.2,
-                style: TextStyle(color: Colors.white),
+            new GestureDetector(
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.pushNamed(context, MyRoutes.contactRoute);
+              },
+              child: ListTile(
+                leading: Icon(
+                  Icons.contact_mail_outlined,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  "Contact Us",
+                  textScaleFactor: 1.2,
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
             ListTile(
