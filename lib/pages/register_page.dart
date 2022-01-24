@@ -1,6 +1,7 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fpg_india/utils/ClippingClass.dart';
 import 'package:fpg_india/utils/functions.dart';
 import 'package:fpg_india/utils/routes.dart';
 
@@ -33,7 +34,17 @@ class _LoginPageState extends State<LoginPage> {
                       clipper: ClippingClass(),
                       child: Container(
                         height: 450.0,
-                        decoration: BoxDecoration(color: Colors.blue),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [
+                                const Color(0xFF0C5F9A),
+                                const Color(0xFF0094FE),
+                              ],
+                              begin: const FractionalOffset(0.0, 1.0),
+                              end: const FractionalOffset(0.0, 0.0),
+                              stops: [0.0, 1.0],
+                              tileMode: TileMode.clamp),
+                        ),
                       ),
                     ),
                   ),
@@ -43,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                     alignment: Alignment.center,
                     child: Column(
                       children: [
-                        SizedBox(height: 50),
+                        SizedBox(height: 45),
                         CircleAvatar(
                           backgroundColor: Colors.black26,
                           radius: 50.0,
@@ -57,15 +68,15 @@ class _LoginPageState extends State<LoginPage> {
                           "Welcome to FPG",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 20.0,
+                              fontSize: 16.0,
                               color: Colors.white),
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 5),
                         Text(
                           "A unique way to buy properties",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16.0,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 14.0,
                               color: Colors.white),
                         ),
                         SizedBox(height: 15),
@@ -74,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Container(
                     margin: EdgeInsets.only(
-                        top: 260, left: 20.0, right: 20.0, bottom: 0.0),
+                        top: 230, left: 20.0, right: 20.0, bottom: 0.0),
                     color: Colors.transparent,
                     child: Column(
                       children: <Widget>[
@@ -203,6 +214,7 @@ class _LoginPageState extends State<LoginPage> {
                                             onTap: () {
                                               // MyFunctions.showToast(
                                               //     "Working on it!");
+
                                               Navigator.pushNamed(
                                                   context, MyRoutes.homeRoute);
                                             },
@@ -271,30 +283,4 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-}
-
-class ClippingClass extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    var path = Path();
-    path.lineTo(0.0, size.height - 80);
-    path.quadraticBezierTo(
-      size.width / 4,
-      size.height,
-      size.width / 2,
-      size.height,
-    );
-    path.quadraticBezierTo(
-      size.width - (size.width / 4),
-      size.height,
-      size.width,
-      size.height - 80,
-    );
-    path.lineTo(size.width, 0.0);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
